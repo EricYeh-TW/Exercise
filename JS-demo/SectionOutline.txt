@@ -1,0 +1,168 @@
+JAVASCRIPT TYPES
+-----------------
+1. Number 
+2. String
+3. Boolean
+4. Undefined
+5. Null
+<!-- 6. Symbol (new in ECMAScript 6) -->
+7. Object
+
+JAVASCRIPT COMPARISONS
+-----------------
+
+!==
+===
+>=
+<=
+>
+<
+
+JAVASCRIPT VARIABLES
+-----------------
+var
+<!-- let (new in ECMAScript 6)-->  
+<!-- const (new in ECMAScript 6)-->
+
+JAVASCRIPT CONDITIONALS
+-----------------
+if
+else
+else if
+<!-- ternary operator -->
+<!-- switch -->
+
+
+JAVASCRIPT LOGICAL OPERATORS
+-----------------
+&&
+||
+!
+
+JAVASCRIPT FUNCTIONS
+-----------------
+var a = function name() {}
+function name() {}
+return
+<!-- () => (new in ECMAScript 6) -->
+
+JAVASCRIPT DATA STRUCTURES
+-----------------
+Array
+Object
+
+JAVASCRIPT LOOPING
+-----------------
+for
+while
+do 
+forEach (new in ECMAScript 5) 
+
+
+JAVASCRIPT KEYWORDS
+-----------------
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+
+//關於function arguments的應用
+argument 可以幫助我們在建立function的內容時 不必規定死內容 方便之後呼叫但是希望有不同內容是使用
+
+function sing() {
+    console.log("123");
+    console.log("456");
+}
+sing(); //輸出123 456 假如我想改成輸出abc、edf 我得回頭修改 console.log 的內容  或是在創建一個新的 function 並再次呼叫他 非常的不方便
+//如果改用 argument 引數
+
+function sing(song) {
+    console.log(song);
+}
+sing("123"); //輸出123
+sing("abc"); //輸出abc
+//如此一來只要寫一遍 function 之後直接在呼叫時才更改內容
+
+//關於 function return 的應用
+//在 function 中做參數的預算過後 需要將運算過的值回傳 才能夠正常輸出結果 否則一律輸出undefined
+
+function Math(a, b) {
+    a+b;
+}
+Math(); //輸出undefined
+
+function Math(a, b) {
+    return a+b;
+}
+Math(); //輸出正常
+
+//function 一旦遇到 return 就會終止運行 後面的動作將不予理會
+
+
+
+
+//function declaration
+function newFunction () {
+
+}
+
+//function expression
+var newFunction = function () {
+
+}; //注意這種方法最後要加分號
+
+//expression 能夠產生一個值的就稱為一個expression
+1+3;
+var a = 2;
+return true;
+
+//calling(invoking) a function 呼叫function
+alert();
+newFunction(para1, para2);
+
+//assign a VARIABLES
+var a = true;
+
+//function vs method
+function thisIsAFunction() {
+
+} //這是一個function
+
+thisIsAFunction(); //呼叫普通function
+
+var obj = {
+    thisIsAMethod: function() {
+
+    }
+} //在一個物件底下的function叫做method
+
+obj.thisIsAMethod(); //呼叫method
