@@ -1,0 +1,29 @@
+body{
+    margin: 0px;
+}
+
+h1{
+    font-size: 3em;
+    font-family: fantasy;
+    border-bottom: 1px solid rgb(219, 121, 121);
+    color: rgb(219, 121, 121);
+    box-shadow: darkgray 4px 4px 5px;
+}
+
+.gallery{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.gallery img{
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    transition: all 0.5s;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+    box-shadow: darkgray 2px 2px 2px;
+}

@@ -1,0 +1,64 @@
+CSS Cheat Sheet
+
+Reference:
+*https://www.w3schools.com/cssref/css_selectors.asp
+*https://css-tricks.com/almanac/
+
+Cascading Style Sheets at the most basic level it indicates that the order of CSS rules matter. 
+
+
+.class
+#id
+*
+    HTML中的所有元素都會套用CSS
+element
+element, element
+    HTML中的元素A與元素B都會套用CSS
+element element
+    HTML中包含在元素A的元素B會套用CSS
+element > element
+    HTML中包含在元素A且元素B的父層關係是元素A時會套用CSS
+element + element
+    HTML中在元素A之後的元素B會套用CSS，但是在遇到其他元素後就停止
+
+    <h2>H2</h2> //套用CSS
+    <p>test01</p> //會套用
+    <p>test02</p> //會套用
+    <h2>H2</h2>
+    <p>test03</p> //會套用
+
+    <h2>H2</h2> //套用CSS
+    <p>test01</p> //會套用
+    <p>test02</p> //會套用
+    <div>DIV</div>
+    <p>test03</p> //不會套用
+
+element ~ element
+    HTML中在元素A之後的所有元素B會套用CSS
+
+    <h2>H2</h2> //套用CSS
+    <p>test01</p> //會套用
+    <p>test02</p> //會套用
+    <h2>H2</h2>
+    <p>test03</p> //會套用
+
+    <h2>H2</h2> //套用CSS
+    <p>test01</p> //會套用
+    <p>test02</p> //會套用
+    <div>DIV</div>
+    <p>test03</p> //會套用
+
+:hover
+:last-child
+:first-child
+!important (not recommended)
+
+
+What seletors win out in the cascade depends on:
+-Specificity
+    相同權重但是後寫的 css 可以覆蓋先寫的 css
+    當兩個選擇器同時作用在一個元素，權重高的優先生效
+    psuedo-class(偽類)和attribute（屬性選擇器）權重與class相同
+-Importance
+-Source Order
+    <style></style> 為1000
