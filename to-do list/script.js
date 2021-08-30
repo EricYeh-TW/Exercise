@@ -4,6 +4,7 @@ var ul = document.querySelector("ul");
 
 function createList() {
     var li = document.createElement("li");
+    li.classList.add("items");
     li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
     input.value = "";
