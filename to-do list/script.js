@@ -1,6 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+var items = ul.querySelectorAll("li.items");
 
 function createList() {
     var li = document.createElement("li");
@@ -23,4 +24,11 @@ function createAfterEnter(e) {
 }
 
 button.addEventListener("click", createAfterClick); //function 不用加()
+
 input.addEventListener("keypress", createAfterEnter);
+
+items.forEach(function (items) {
+    items.addEventListener("click", function () {
+        items.classList.toggle("done");
+    });
+}); //querySelectorAll returns a collection of elements, so you should iterate over it and add the event listener

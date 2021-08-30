@@ -11,9 +11,14 @@
         -30px 20px 40px dimgrey;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
 .items {
-    width: 20%;
-    margin: 0px;
+    width: fit-content;
+    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -22,7 +27,6 @@
     color: red;
     margin-right: 10px;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .done {
