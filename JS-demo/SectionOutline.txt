@@ -96,7 +96,7 @@ with
 yield
 
 //關於function arguments的應用
-argument 可以幫助我們在建立function的內容時 不必規定死內容 方便之後呼叫但是希望有不同內容是使用
+argument 可以幫助我們在建立function的內容時 不必規定死內容 方便之後呼叫但是希望有不同內容時使用
 
 function sing() {
     console.log("123");

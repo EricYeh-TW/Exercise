@@ -2,29 +2,24 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 
-function inputLength() {
-	return input.value.length;
+function createList() {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(input.value));
+    ul.appendChild(li);
+    input.value = "";
 }
 
-function createListElement() {
-	var li = document.createElement("li");
-	li.appendChild(document.createTextNode(input.value));
-	ul.appendChild(li);
-	input.value = "";
+function createAfterClick() {
+    if (input.value.length > 0) {
+        createList();
+    }
 }
 
-function addListAfterClick() {
-	if (inputLength() > 0) {
-		createListElement();
-	}
+function createAfterEnter(e) {
+    if (input.value.length > 0 && e.key === "Enter") {
+        createList();
+    }
 }
 
-function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
-	}
-}
-
-button.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
+button.addEventListener("click", createAfterClick); //function 不用加()
+input.addEventListener("keypress", createAfterEnter);
