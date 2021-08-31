@@ -29,14 +29,31 @@ function createAfterEnter(e) {
     }
 }
 
-function anyClick() {}
+function doneTask(e) {
+    if (e.target.tagName.toLowerCase() === "li") {
+        e.target.classList.toggle("done");
+    }
+} //tagName總是回傳標籤的大寫英文 因此在這邊加入一個method讓他回傳值變回小寫
+
+function delTask(e) {
+    if (e.target.className === "delbtn") {
+        e.target.parentElement.remove();
+    }
+}
+
+function anyClick(e) {
+    doneTask(e);
+    delTask(e);
+}
+
+ul.addEventListener("click", anyClick);
 
 button.addEventListener("click", createAfterClick); //function 不用加()
 
 input.addEventListener("keypress", createAfterEnter);
 
-items.forEach(function (items) {
-    items.addEventListener("click", function () {
-        items.classList.toggle("done");
-    });
-}); //querySelectorAll returns a collection of elements, so you should iterate over it and add the event listener
+// items.forEach(function (items) {
+//     items.addEventListener("click", function () {
+//         items.classList.toggle("done");
+//     });
+// }); //querySelectorAll returns a collection of elements, so you should iterate over it and add the event listener

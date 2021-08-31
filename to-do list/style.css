@@ -1,6 +1,22 @@
-ul {
+.BG {
+    margin: 10vh auto;
+    padding: 10px 3vw;
+    border: thick double #32a1ce;
+    border-radius: 30px;
+    width: fit-content;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    background-color: hsl(207, 38%, 84%);
+    box-shadow: 0 8px 8px -1px rgb(201, 212, 216), inset 0 0 8px rgb(134, 143, 146);
+}
+
+.space {
+    margin: 10px auto;
+    padding: 0;
+}
+
+ul {
     padding: 0%;
 }
 
@@ -15,6 +31,7 @@ ul {
 
 .done {
     text-decoration: line-through;
+    color: darkred;
 }
 
 .delbtn {
