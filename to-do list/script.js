@@ -4,10 +4,16 @@ var ul = document.querySelector("ul");
 var items = ul.querySelectorAll("li.items");
 
 function createList() {
+    var div = document.createElement("div");
+    div.classList.add("task");
     var li = document.createElement("li");
     li.classList.add("items");
+    var delbtn = document.createElement("button");
+    delbtn.classList.add("delbtn");
     li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
+    delbtn.appendChild(document.createTextNode("Del"));
+    ul.appendChild(div);
+    div.append(delbtn, li);
     input.value = "";
 }
 
@@ -22,6 +28,8 @@ function createAfterEnter(e) {
         createList();
     }
 }
+
+function anyClick() {}
 
 button.addEventListener("click", createAfterClick); //function 不用加()
 
