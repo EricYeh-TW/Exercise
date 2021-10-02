@@ -1,5 +1,5 @@
 // Complete the below questions using this array:
-const array = [
+const oldArray = [
   {
     username: "john",
     team: "red",
@@ -29,16 +29,37 @@ const array = [
 
 //Create an array using forEach that has all the usernames with a "!" to each of the usernames
 
+let newArray = [];
+const testArray = oldArray.forEach(user => {
+	let username = user.username;
+	return username = username + "!";
+	newArray.push(username);
+})
 
 //Create an array using map that has all the usernames with a "? to each of the usernames
 
+const test2Array = oldArray.map(user => {
+	let username = user.username;
+	return username = username + "?";
+})
 
 //Filter the array to only include users who are on team: red
 
+const test3Array = oldArray.filter(user => {
+	let userteam = user.team;
+	return userteam === "red";
+})
 
 //Find out the total score of all users using reduce
 
-// (1), what is the value of i?
+const test4Array = oldArray.reduce((accumulator, user) => {
+	let userscore = user.score;
+	return accumulator + userscore;
+}, 0);
+
+console.log('reduce', test4Array);
+
+// (1), what is the value of i? 
 // (2), Make this map function pure:
 const arrayNum = [1, 2, 4, 5, 8, 9];
 const newArray = arrayNum.map((num, i) => {
